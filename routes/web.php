@@ -14,3 +14,7 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+Route::get('/home', 'HomeController@index');
+Route::get('/message', 'HomeController@getMessage');
+Route::post('message', 'HomeController@sendMessage');

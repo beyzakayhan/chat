@@ -19,10 +19,9 @@ class MessageEvent extends Event implements ShouldBroadcast
      * @param mixed $message
      * @param mixed $createdAt
      */
-    public function __construct($message, $createdAt)
+    public function __construct($message)
     {
         $this->message = $message;
-        $this->created_at = $createdAt;
     }
 
     /**
@@ -30,6 +29,8 @@ class MessageEvent extends Event implements ShouldBroadcast
      */
     public function broadcastOn()
     {
+        
+
         return new Channel('stream_message');
     }
 
